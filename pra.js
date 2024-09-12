@@ -1,13 +1,13 @@
-let students = [
-    { name: 'Alice', score: 85 },
-    { name: 'Bob', score: 92 },
-    { name: 'Charlie', score: 88 }
-  ];
+const todoinput = document.querySelector("#todoInput")
+const addbutton = document.querySelector("#addButton")
+const todolist = document.querySelector("#todoList")
 
-let sum = 0
-for(let i=0; i < students.length; i++){
-sum = sum + students[i].score
-}
-const average = sum / students.length
-
-console.log(average); 
+addbutton.addEventListener('click', function () {
+  const value = todoinput.value
+  if (value !== '') {
+    const todo = document.createElement('li');
+    todo.textContent = value;
+    todolist.appendChild(todo);
+    todoinput.value = ''
+  }
+})
